@@ -1,0 +1,27 @@
+{
+  "name": "dd-notes",
+  "version": "1.0.0",
+  "description": "Basic single-page note app",
+  "main": "index.js",
+  "scripts": {
+    "test": "tester",
+    "start": "node node_modules/http-server/bin/http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddregalo/DD-Notes.git"
+  },
+  "keywords": [
+    "note",
+    "app"
+  ],
+  "author": "daniel campos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddregalo/DD-Notes/issues"
+  },
+  "homepage": "https://github.com/ddregalo/DD-Notes#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
