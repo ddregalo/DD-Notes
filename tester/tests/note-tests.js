@@ -1,5 +1,5 @@
 // Test section title
-document.getElementById("result").innerHTML += "<p><b>NOTE + NOTELIST MODEL TESTS</b></p>";
+document.getElementById("result").innerHTML += "<p style='color:blue;'><b>NOTE + NOTELIST MODEL TESTS</b></p>";
 // Tests that the string passed into a new Note instatnce
 // is equal to the content property
 function testNoteContentIsReadable() {
