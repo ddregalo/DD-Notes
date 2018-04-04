@@ -1,11 +1,11 @@
-#Notes app
+# Notes app
 
-###Description
+### Description
 Build a notes app as a frontend, single page web app. You'll be guided through this by the high-level challenges listed below. However, there will be no walkthroughs.
 
 To get an idea of what you'll be building, here are some user stories and a mockup for the notes app. (This is just to give you an idea of the app. You'll work through the challenges below to build it.)
 
-###Challenges
+### Challenges
 
 "Spike" means writing code without writing tests. "TDD" means develop test first.
 
@@ -25,7 +25,7 @@ Use TDD to finish support for user note creation
 Refactor
 Extract a standalone test library
 
-###User Stories
+### User Stories
 
 ```
 As a programmer
