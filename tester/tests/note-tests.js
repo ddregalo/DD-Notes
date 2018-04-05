@@ -9,6 +9,15 @@ function testNoteContentIsReadable() {
 };
 testNoteContentIsReadable();
 
+// Tests a note has an unique id
+function testNoteUniqueId() {
+  document.getElementById("result").innerHTML += "Test Note // Each note has a unique id:";
+  let note = new Note("Checkmate 1-2 1-2!!");
+  test.isEqual(note.id === 2);
+};
+testNoteUniqueId();
+//
+//
 // Tests that the noteList property in NoteList is an array
 function testNoteListIsArray() {
   document.getElementById("result").innerHTML += "Test NoteList // NoteList is an array (in this case empty):";
