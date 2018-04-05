@@ -17,7 +17,7 @@ function testNoteListViewSendsHtmlStringOneNote() {
   let noteList = new NoteList();
   noteList.newNote("Checkmate 1-2 1-2!!");
   let noteListView = new NoteListView(noteList);
-  test.isEqual(noteListView.printNotes() === "<ul><li><div>Checkmate 1-2 1-2!!</div></li></ul>");
+  test.isEqual(noteListView.printNotes() === "<ul><li><div><a href=\"#note/4\">Checkmate 1-2 1-2!!</a></div></li></ul>");
 };
 testNoteListViewSendsHtmlStringOneNote();
 
@@ -29,7 +29,7 @@ function testNoteListViewSendsHtmlStringTwoNotes() {
   noteList.newNote("Checkmate 1-2 1-2!!");
   noteList.newNote("Yessmate Loud & Clear!!!");
   let noteListView = new NoteListView(noteList);
-  test.isEqual(noteListView.printNotes() === "<ul><li><div>Checkmate 1-2 1-2!!</div></li><li><div>Yessmate Loud & Clea</div></li></ul>");
+  test.isEqual(noteListView.printNotes() === "<ul><li><div><a href=\"#note/5\">Checkmate 1-2 1-2!!</a></div></li><li><div><a href=\"#note/6\">Yessmate Loud & Clea</a></div></li></ul>");
 };
 testNoteListViewSendsHtmlStringTwoNotes();
 
@@ -40,6 +40,6 @@ function testNoteListViewSendsHtmlStringPreview() {
   let noteList = new NoteList();
   noteList.newNote("All The Things I Love: sweets, art and skateboarding");
   let noteListView = new NoteListView(noteList);
-  test.isEqual(noteListView.printNotes() === "<ul><li><div>All The Things I Lov</div></li></ul>");
+  test.isEqual(noteListView.printNotes() === "<ul><li><div><a href=\"#note/7\">All The Things I Lov</a></div></li></ul>");
 };
 testNoteListViewSendsHtmlStringPreview();
