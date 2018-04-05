@@ -12,6 +12,7 @@ let notelist = new NoteList();
   NoteController.prototype.printToBrowser = function () {
     let htmlString = this.noteview.printNotes();
     document.getElementById("app").innerHTML = `<p>${htmlString}</p>`;
+    return htmlString;
   };
   exports.NoteController = NoteController;
 })(this);
