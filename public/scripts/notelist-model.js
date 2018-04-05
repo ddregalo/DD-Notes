@@ -1,3 +1,7 @@
+console.log("NOTELIST MODEL RUNNING");
+
+"use strict";
+
 (function(exports) {
   function NoteList() {
     this.notesDb = []

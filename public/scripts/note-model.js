@@ -1,3 +1,7 @@
+console.log("NOTE MODEL RUNNING");
+
+"use strict";
+
 (function(exports) {
   function Note(content) {
     this.content = content

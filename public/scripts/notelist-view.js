@@ -1,3 +1,7 @@
+console.log("NOTELIST VIEW RUNNING");
+
+"use strict";
+
 (function(exports) {
   function NoteListView(notelist) {
     this.notesToPrint = []
