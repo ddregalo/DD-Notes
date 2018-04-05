@@ -10,7 +10,7 @@ function testNoteControllerInstantiate() {
 };
 testNoteControllerInstantiate();
 
-// Tests that NoteController can be instantiated
+// Tests that NoteController send an html string to page
 function testNoteControllerHtmlString() {
   document.getElementById("result").innerHTML += "Test Note Controller // NoteController printToBrowser function contains html string:</br>";
   let noteList = new NoteList();
