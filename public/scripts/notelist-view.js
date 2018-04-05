@@ -6,8 +6,10 @@ console.log("NOTELIST VIEW RUNNING");
   function NoteListView(notelist) {
     this.notesToPrint = []
     for (let i=0; i < notelist.notesDb.length; i++) {
-      this.notesToPrint.push(notelist.notesDb[i].content);
+      console.log(`SUBSTRING LESS THAN 20: ${notelist.notesDb[i].content.substring(0, 21)}`);
+      this.notesToPrint.push(notelist.notesDb[i].content.substring(0, 20));
     }
+
   };
   NoteListView.prototype.printNotes = function () {
     let returnString = "<ul><li><div>";

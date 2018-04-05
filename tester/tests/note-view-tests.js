@@ -22,13 +22,24 @@ function testNoteListViewSendsHtmlStringOneNote() {
 testNoteListViewSendsHtmlStringOneNote();
 
 // Tests that printNotes function prints a html string of all notes - case 2 notes
-function testNoteListViewSendsHtmlStringOneNote() {
+function testNoteListViewSendsHtmlStringTwoNotes() {
   document.getElementById("result").innerHTML += "Test NoteListView // NoteListView printNotes method sends HTML string of all notes:</br>";
   document.getElementById("result").innerHTML += "Case // 2 notes in notelist model:";
   let noteList = new NoteList();
   noteList.newNote("Checkmate 1-2 1-2!!");
   noteList.newNote("Yessmate Loud & Clear!!!");
   let noteListView = new NoteListView(noteList);
-  test.isEqual(noteListView.printNotes() === "<ul><li><div>Checkmate 1-2 1-2!!</div></li><li><div>Yessmate Loud & Clear!!!</div></li></ul>");
+  test.isEqual(noteListView.printNotes() === "<ul><li><div>Checkmate 1-2 1-2!!</div></li><li><div>Yessmate Loud & Clea</div></li></ul>");
 };
-testNoteListViewSendsHtmlStringOneNote();
+testNoteListViewSendsHtmlStringTwoNotes();
+
+// Tests that printNotes function only prints first 20 characters of note - case 1 note
+function testNoteListViewSendsHtmlStringPreview() {
+  document.getElementById("result").innerHTML += "Test NoteListView // NoteListView printNotes method sends HTML string of all notes:</br>";
+  document.getElementById("result").innerHTML += "Case // 1 note - 20 character preview of note:";
+  let noteList = new NoteList();
+  noteList.newNote("All The Things I Love: sweets, art and skateboarding");
+  let noteListView = new NoteListView(noteList);
+  test.isEqual(noteListView.printNotes() === "<ul><li><div>All The Things I Lov</div></li></ul>");
+};
+testNoteListViewSendsHtmlStringPreview();
