@@ -55,26 +55,12 @@ function createNewNotePageEvent() {
   document.getElementById("submit").addEventListener("click", function(event){
     console.log("SUBMIT EVENT LOGGED");
     event.preventDefault();
+    let newNoteForm = document.forms.newnote;
+    console.log(`New Note Form: ${newNoteForm}`);
+    let newNoteFormData = new FormData(newNoteForm);
+    console.log(`New Note Form Data: ${newNoteFormData}`);
+    let noteText = newNoteFormData.get('new_note_text');
+    console.log(`New Note Text From Form: ${noteText}`);
   });
-};
 
-//
-// makeUrlChangeShowAnimalForCurrentPage();
-//
-//       function makeUrlChangeShowAnimalForCurrentPage() {
-//         window.addEventListener("hashchange", showAnimalForCurrentPage);
-//       };
-//
-//       function showAnimalForCurrentPage() {
-//         showAnimal(getAnimalFromUrl(window.location));
-//       };
-//
-//       function getAnimalFromUrl(location) {
-//         return location.hash.split("#")[1];
-//       };
-//
-//       function showAnimal(animal) {
-//         document
-//           .getElementById("animal")
-//           .innerHTML = animal;
-//       };
+};
