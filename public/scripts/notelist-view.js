@@ -9,7 +9,6 @@ console.log("NOTELIST VIEW RUNNING");
       console.log(`SUBSTRING LESS THAN 20: ${notelist.notesDb[i].content.substring(0, 21)}`);
       this.notesToPrint.push(`<a href="#note/${notelist.notesDb[i].id}">${notelist.notesDb[i].content.substring(0, 20)}</a>`);
     }
-
   };
   NoteListView.prototype.printNotes = function () {
     let returnString = "<ul><li><div>";
