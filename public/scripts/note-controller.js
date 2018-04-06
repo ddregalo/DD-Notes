@@ -4,6 +4,28 @@ console.log("NOTE CONTROLLER RUNNING");
 
 let notelist = new NoteList();
 
+function showNote(note) {
+  document
+    .getElementById("app")
+    .innerHTML = note;
+};
+
+(function(exports) {
+  function NoteController(notelist) {
+    notelist.newNote("Checkmate 1-2 1-2!!");
+    this.noteview = new NoteListView(notelist);
+  };
+  NoteController.prototype.printToBrowser = function () {
+    let htmlString = this.noteview.printNotes();
+    document.getElementById("app").innerHTML = `<p>${htmlString}</p>`;
+    return htmlString;
+  };
+  exports.NoteController = NoteController;
+})(this);
+
+let noteController = new NoteController(notelist);
+noteController.printToBrowser();
+
 makeUrlChangeShowSingleNotePageView();
 
 function makeUrlChangeShowSingleNotePageView() {
@@ -27,28 +49,14 @@ function getNoteFromUrl(location) {
   return noteView.convertHtml();
 };
 
-function showNote(note) {
-  document
-    .getElementById("app")
-    .innerHTML = note;
+createNewNotePageEvent();
+
+function createNewNotePageEvent() {
+  document.getElementById("submit").addEventListener("click", function(event){
+    console.log("SUBMIT EVENT LOGGED");
+    event.preventDefault();
+  });
 };
-
-(function(exports) {
-  function NoteController(notelist) {
-    notelist.newNote("Checkmate 1-2 1-2!!");
-    this.noteview = new NoteListView(notelist);
-  };
-  NoteController.prototype.printToBrowser = function () {
-    let htmlString = this.noteview.printNotes();
-    document.getElementById("app").innerHTML = `<p>${htmlString}</p>`;
-    return htmlString;
-  };
-  exports.NoteController = NoteController;
-})(this);
-
-let noteController = new NoteController(notelist);
-noteController.printToBrowser();
-
 
 //
 // makeUrlChangeShowAnimalForCurrentPage();

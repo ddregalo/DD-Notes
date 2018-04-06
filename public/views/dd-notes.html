@@ -11,6 +11,11 @@
   </head>
   <body>
     <div id="app"></div>
-
+    <div id="form">
+      <form id="newnote" action="/views/dd-notes.html#newnote" method="post">
+        <input type="submit" value="CREATE NOTE" id="submit">
+      </form>
+      <textarea name="new_note_text" form="newnote">Enter note here...</textarea>
+    </div>
   </body>
 </html>
