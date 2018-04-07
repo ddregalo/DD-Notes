@@ -4,15 +4,8 @@ console.log("NOTE CONTROLLER RUNNING");
 
 let notelist = new NoteList();
 
-function showNote(note) {
-  document
-    .getElementById("app")
-    .innerHTML = note;
-};
-
 (function(exports) {
   function NoteController(notelist) {
-    notelist.newNote("Checkmate 1-2 1-2!!");
     this.noteview = new NoteListView(notelist);
   };
   NoteController.prototype.printToBrowser = function () {
@@ -49,6 +42,12 @@ function getNoteFromUrl(location) {
   return noteView.convertHtml();
 };
 
+function showNote(note) {
+  document
+    .getElementById("app")
+    .innerHTML = note;
+};
+
 createNewNotePageEvent();
 
 function createNewNotePageEvent() {
@@ -59,8 +58,11 @@ function createNewNotePageEvent() {
     console.log(`New Note Form: ${newNoteForm}`);
     let newNoteFormData = new FormData(newNoteForm);
     console.log(`New Note Form Data: ${newNoteFormData}`);
-    let noteText = newNoteFormData.get('new_note_text');
+    noteText = newNoteFormData.get('new_note_text');
     console.log(`New Note Text From Form: ${noteText}`);
+    notelist.newNote(noteText);
+    let noteController = new NoteController(notelist);
+    noteController.printToBrowser();
+    document.getElementById('note_text_area').value='';
   });
-
 };
